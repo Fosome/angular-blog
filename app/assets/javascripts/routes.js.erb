@@ -1,0 +1,29 @@
+App.config(['$routeProvider', '$locationProvider', function($routes, $locationProvider) {
+
+  $routes.when('/', {
+    templateUrl : '<%= asset_path("posts/index.html") %>',
+    controller : PostsCtrl
+  });
+
+  $routes.when('/posts', {
+    templateUrl : '<%= asset_path("posts/index.html") %>',
+    controller : PostsCtrl
+  });
+
+  $routes.when('/posts/new', {
+    templateUrl : '<%= asset_path("posts/new.html") %>',
+    controller : NewPostCtrl
+  });
+
+  $routes.when('/posts/:id', {
+    templateUrl : '<%= asset_path("posts/show.html") %>',
+    controller : PostCtrl
+  });
+
+  $routes.when('/posts/:id/edit', {
+    templateUrl : '<%= asset_path("posts/edit.html") %>',
+    controller : EditPostCtrl
+  });
+
+  $locationProvider.html5Mode(true);
+}]);

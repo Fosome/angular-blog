@@ -1,0 +1,10 @@
+<p>
+	<%= link_to 'New Post', [:new, :post] %>
+</p>
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<%= link_to post.title, [post] %>
+		</li>
+	<% end %>
+</ul>

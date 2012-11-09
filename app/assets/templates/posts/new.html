@@ -1,0 +1,39 @@
+<h2>
+	New Post
+</h2>
+
+<form ng-submit="createPost()">
+	<table>
+		<tr>
+			<th>
+				Title
+			</th>
+			<td>
+				<input type="text" data-ng-model="post.title" required/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Author
+			</th>
+			<td>
+				<input type="text" data-ng-model="post.author" required/>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Body
+			</th>
+			<td>
+				<textarea data-ng-model="post.body" required></textarea>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>
+				<button type="submit" class="btn btn-success">Create Post</button>
+				<a href="/posts" class="btn">Cancel</a>
+			</td>
+		</tr>
+	</table>
+</form>

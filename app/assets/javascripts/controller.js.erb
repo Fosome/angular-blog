@@ -1,0 +1,50 @@
+function BlogCtrl() {}
+
+function PostsCtrl($scope, Posts) {
+  $scope.posts = Posts.index();
+}
+
+function PostCtrl($scope, $routeParams, $location, Posts) {
+  $scope.post = Posts.show({id : $routeParams.id});
+
+  $scope.destroyPost = function() {
+    $scope.post.$delete({id : $scope.post.id},
+      function() {
+        $location.path('/posts');
+      },
+      function() {
+        alert("Can't remove post...");
+      }
+    );
+  }
+}
+
+function NewPostCtrl($scope, $location, Posts) {
+  $scope.post = new Posts();
+
+  $scope.createPost = function() {
+    $scope.post.$create({},
+      function() {
+        $location.path('/posts');
+      },
+      function() {
+        alert("Invalid post...");
+      }
+    );
+  }
+}
+
+function EditPostCtrl($scope, $routeParams, $location, Posts) {
+  $scope.post = Posts.show({id : $routeParams.id});
+
+  $scope.updatePost = function() {
+    $scope.post.$update({},
+      function() {
+        $location.path('/posts/' + $scope.post.id);
+      },
+      function() {
+        alert("Invalid post...");
+      }
+    );
+  }
+}

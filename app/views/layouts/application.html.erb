@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-ng-app="AngularBlog">
+<head>
+	<title>AngularBlog</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= csrf_meta_tags %>
+</head>
+<body data-ng-controller="BlogCtrl">
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<div class="navbar-inner">
+				<a class="brand" href="#">Angular Blog</a>
+			</div>
+		</div>
+		<data-ng-view></data-ng-view>
+		<div class="data-transfer hidden">
+			<%= image_tag 'spinner.gif' %>
+		</div>
+	</div>
+	<script src="/assets/angular-1.0.2/angular.js"></script>
+	<script src="/assets/angular-1.0.2/angular-resource.js"></script>
+	<%= javascript_include_tag "application" %>
+</body>
+</html>
