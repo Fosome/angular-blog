@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require angular
+//= require angular_blog
 //= require routes
-//= require services
-//= require controller
 //= require ui
+
+//= require_tree ./controllers/
+//= require_tree ./resources/

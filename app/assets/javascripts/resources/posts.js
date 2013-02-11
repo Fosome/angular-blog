@@ -10,12 +10,3 @@ App.factory('Posts', ['$resource', function($resource) {
       destroy:  { method: 'DELETE' }
     });
 }]);
-
-App.factory('Comments', ['$resource', function($resource) {
-  return $resource(
-    '/comments/:id',
-    { id: '@id' },
-    {
-      create:   { method: 'POST' }
-    });
-}]);
