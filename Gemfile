@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'simple_form',    '~> 2.0.4'
 gem 'sass-rails',     '~> 3.2.3'
 gem 'bootstrap-sass', '~> 2.1.0.1'
