@@ -32,7 +32,7 @@ function NewCommentCtrl($scope, $routeParams, $location, Comments, Posts, Commen
 
 NewCommentCtrl.$inject = ['$scope', '$routeParams', '$location', 'Comments', 'Posts', 'CommentBus'];
 
-App.factory('CommentBus', function($rootScope) {
+App.factory('CommentBus', ['$rootScope', function($rootScope) {
   var bus = {};
   bus.comment = null;
 
@@ -42,4 +42,4 @@ App.factory('CommentBus', function($rootScope) {
   };
 
   return bus;
-});
+}]);
