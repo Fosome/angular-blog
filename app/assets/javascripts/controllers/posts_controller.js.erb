@@ -2,6 +2,8 @@ function PostsCtrl($scope, Posts) {
   $scope.posts = Posts.index();
 }
 
+PostsCtrl.$inject = ['$scope', 'Posts'];
+
 function PostCtrl($scope, $routeParams, $location, Posts, Comments) {
   $scope.post = Posts.show({id : $routeParams.id});
 
@@ -16,6 +18,8 @@ function PostCtrl($scope, $routeParams, $location, Posts, Comments) {
     );
   }
 }
+
+PostCtrl.$inject = ['$scope', '$routeParams', '$location', 'Posts'];
 
 function NewPostCtrl($scope, $location, Posts) {
   $scope.post = new Posts();
@@ -32,6 +36,8 @@ function NewPostCtrl($scope, $location, Posts) {
   }
 }
 
+NewPostCtrl.$inject = ['$scope', '$location', 'Posts'];
+
 function EditPostCtrl($scope, $routeParams, $location, Posts) {
   $scope.post = Posts.show({id : $routeParams.id});
 
@@ -46,3 +52,5 @@ function EditPostCtrl($scope, $routeParams, $location, Posts) {
     );
   }
 }
+
+EditPostCtrl.$inject = ['$scope', '$routeParams', '$location', 'Posts'];

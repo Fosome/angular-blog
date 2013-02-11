@@ -6,6 +6,8 @@ function CommentsCtrl($scope, $routeParams, Comments, CommentBus) {
   });
 }
 
+CommentsCtrl.$inject = ['$scope', '$routeParams', 'Comments', 'CommentBus'];
+
 function NewCommentCtrl($scope, $routeParams, $location, Comments, Posts, CommentBus) {
   $scope.comment = new Comments();
 
@@ -27,6 +29,8 @@ function NewCommentCtrl($scope, $routeParams, $location, Comments, Posts, Commen
 	  CommentBus.addComment(comment);
   };
 }
+
+NewCommentCtrl.$inject = ['$scope', '$routeParams', '$location', 'Comments', 'Posts', 'CommentBus'];
 
 App.factory('CommentBus', function($rootScope) {
   var bus = {};
