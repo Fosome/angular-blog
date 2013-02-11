@@ -1,15 +1,15 @@
 test:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   database: angular_blog_test
   pool: 5
   username: root
-  password: mysqlsucks
+  password:
 
 development:
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   database: angular_blog_development
   pool: 5
   username: root
-  password: mysqlsucks
+  password:
