@@ -4,8 +4,9 @@ function PostsCtrl($scope, Posts) {
   $scope.posts = Posts.index();
 }
 
-function PostCtrl($scope, $routeParams, $location, Posts) {
+function PostCtrl($scope, $routeParams, $location, Posts, Comments) {
   $scope.post = Posts.show({id : $routeParams.id});
+  $scope.comment = new Comments({post_id : $routeParams.id});
 
   $scope.destroyPost = function() {
     $scope.post.$delete({id : $scope.post.id},
@@ -17,6 +18,20 @@ function PostCtrl($scope, $routeParams, $location, Posts) {
       }
     );
   }
+
+  $scope.createComment = function() {
+    $scope.comment.$create({},
+      $scope.reload,
+      function() {
+        alert("Invalid comment...");
+      }
+    );
+  }
+
+  $scope.reload = function() {
+	$scope.post = Posts.show({id : $routeParams.id});
+	$scope.comment = new Comments({post_id : $routeParams.id});
+  };
 }
 
 function NewPostCtrl($scope, $location, Posts) {

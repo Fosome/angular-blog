@@ -8,6 +8,16 @@
 	<%= @post.body %>
 </p>
 
+<h3>
+	Comments
+</h3>
+
+<ul>
+	<% @post.comments.each do |comment| %>
+		<%= comment.body %>
+	<% end %>
+</ul>
+
 <p>
 	<%= link_to 'Back', [:posts] %> | 
 	<%= link_to 'Edit', [:edit, @post] %> | 
